@@ -15,7 +15,7 @@ from RootTools.core.standard          import *
 
 #Analysis
 from Analysis.Tools.WeightInfo        import WeightInfo
-from Analysis.Tools.HyperPoly         import HyperPoly
+from Analysis.Tools.HyperPoly2        import HyperPoly
 from Analysis.Tools.GenSearch         import GenSearch
 from Analysis.Tools.helpers           import deltaPhi, deltaR, deltaR2, checkRootFile
 from Analysis.Tools.DelphesProducer   import DelphesProducer
@@ -350,7 +350,7 @@ else:
     products['gp']         = {'type':'vector<reco::GenParticle>', 'label':("genParticles")}
 
 # relocate original
-sample.copy_files( os.path.join(tmp_output_directory, "input") )
+#sample.copy_files( os.path.join(tmp_output_directory, "input") )
 
 fwliteReader = sample.fwliteReader( products = products )
 readers.append( fwliteReader )

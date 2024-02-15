@@ -629,6 +629,9 @@ def filler( event ):
         p4_top      = copy.deepcopy(top['p4'])
         p4_antitop  = copy.deepcopy(antitop['p4'])
 
+        # Eq 4.21 Bernreuther (k* and r*) #Lab frame!!
+        sign_star = float(np.sign(abs(p4_top.Rapidity()) - abs(p4_antitop.Rapidity())))
+
         p4_top1_f1 = makeP4(top1_parton['f1'].p4()) #down-type quark is f1, defined above
         p4_top2_f1 = makeP4(top2_parton['f1'].p4()) 
 
@@ -688,8 +691,6 @@ def filler( event ):
         k_a =  k_hat
 
         # Eq 4.21 Bernreuther (k* and r*)
-        sign_star = float(np.sign(abs(p4_top.Rapidity()) - abs(p4_antitop.Rapidity())))
-        
         k_a_star  = sign_star*k_hat
         r_a_star  = sign_star*sign_*r_hat
     

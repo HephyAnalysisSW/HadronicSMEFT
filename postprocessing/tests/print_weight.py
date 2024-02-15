@@ -31,10 +31,15 @@ from RootTools.core.standard import *
 #miniAOD = FWLiteSample.fromFiles("miniAOD", ["/eos/vbc/user/robert.schoefbeck/test_reweighting/miniAODSIM.root"])
 #miniAOD = FWLiteSample.fromFiles("miniAOD", ["/users/robert.schoefbeck/CMS/test/CMSSW_10_2_22/src/Samples/crab/gen/reco_FastSim_LO_0j_102X_CP5_FastSim.root"])
 #miniAOD = FWLiteSample.fromFiles("miniAOD", ["/eos/vbc/user/robert.schoefbeck/miniAODSim_fast_private/flavor_vec_ttZ01j_schoef-flavor_vec_ttZ01j-c54a772d74cd107a1191ec379d5aa477_USER/MINIAODSIMoutput_338.root"])
-sample = FWLiteSample.fromFiles("gen", ["/eos/vbc/experiments/cms/store/user/schoef/WH_LeptonicW_NLO/WH_LeptonicW_NLO/220315_092012/0000/GEN_93X_54.root"])
+#sample = FWLiteSample.fromFiles("gen", ["/eos/vbc/experiments/cms/store/user/schoef/WH_LeptonicW_NLO/WH_LeptonicW_NLO/220315_092012/0000/GEN_93X_54.root"])
+sample = FWLiteSample.fromFiles("gen", ["/scratch/robert.schoefbeck/CMS/sampleproduction/Run2SIM_UL2016MiniAOD/TTTT_13TeV_madgraph_pythia8_Run2SIM_UL2016MiniAOD_231227_194145/try-2/MiniAOD_4.root"])
 #logger.info("Compute parametrisation from miniAOD relying on the same sequence of weights as in the card file.")
 
-fwliteReader = sample.fwliteReader( products = { 'lhe':{'type':'LHEEventProduct', 'label':("externalLHEProducer")}} )
+fwliteReader = sample.fwliteReader( products = 
+    { 'lhe':   {'type':'LHEEventProduct', 'label':("externalLHEProducer")},
+     'genJets':{'type':'vector<reco::GenJet>', 'label':("slimmedGenJetsAK8")},
+    }) 
+
 fwliteReader.start()
 counter=0
 
@@ -46,7 +51,6 @@ while fwliteReader.run( ):
     weights      = []
     param_points = []
     for weight in lhe_weights:
-        if not weight.id.endswith('_nlo'): continue
         print weight.id, weight.wgt
 #        # Store nominal weight (First position!) 
 #        if weight.id in ['rwgt_1','dummy']: rw_nominal = weight.wgt

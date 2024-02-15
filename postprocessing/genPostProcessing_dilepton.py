@@ -221,6 +221,9 @@ def get_spincorrelation_angles(antilepton_4v, lepton_4v, topQ_4v, atopQ_4v):
     p4_l_plus = copy.deepcopy(antilepton_4v)
     p4_l_minus = copy.deepcopy(lepton_4v)
 
+    # Eq 4.21 Bernreuther (k* and r*) LAB frame !!
+    sign_star = float(sign(abs(p4_top.Rapidity()) - abs(p4_antitop.Rapidity())))
+
     # Boosting into tt rest frame
 
     boost_tt = (p4_top + p4_antitop).BoostVector()
@@ -260,7 +263,6 @@ def get_spincorrelation_angles(antilepton_4v, lepton_4v, topQ_4v, atopQ_4v):
     k_b = -k_hat
 
     # Eq 4.21 Bernreuther (k* and r*)
-    sign_star = float(sign(abs(p4_top.Rapidity()) - abs(p4_antitop.Rapidity())))
     k_a_star  = sign_star*k_hat
     k_b_star  = -sign_star*k_hat
     r_a_star  = sign_star*sign_*r_hat

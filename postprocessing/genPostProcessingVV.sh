@@ -12,7 +12,10 @@
 #python genPostProcessingVV.py --isBkg --targetDir v6 --delphesEra ATLAS --sample DY_HT300 #SPLIT2991
 
 #python genPostProcessingVV.py --addReweights --targetDir v6 --delphesEra ATLAS --sample WZto2L_HT300_v5 #SPLIT2998
-python genPostProcessingVV.py --addReweights --targetDir v6 --delphesEra ATLAS --sample WZto2L_HT300_NoRef_v5_v2 #SPLIT2996
-
+#python genPostProcessingVV.py --addReweights --targetDir v6 --delphesEra ATLAS --sample WZto2L_HT300_NoRef_v5_v2 #SPLIT2996
+#python genPostProcessingVV.py --addReweights --targetDir v7 --delphesEra ATLAS --sample WZto2L_HT300_v7 #SPLIT2992
+#python genPostProcessingVV.py --addReweights --targetDir v7 --delphesEra ATLAS --removeDelphesFiles --sample WZto2L_HT300_v7_ext #SPLIT3000
+#python genPostProcessingVV.py --addReweights --targetDir v7 --delphesEra ATLAS --removeDelphesFiles --sample WZto2L_HT300_v7_ext2 #SPLIT3000
+python genPostProcessingVV.py --addReweights --targetDir v7 --delphesEra ATLAS --removeDelphesFiles --sample WZto2L_HT300_HI #SPLIT2692
 
 #python genPostProcessingWG.py --addReweights --targetDir v6 --delphesEra ATLAS --sample WG_HT300 #SPLIT350

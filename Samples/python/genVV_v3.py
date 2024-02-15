@@ -37,6 +37,21 @@ WZto2L_HT300_v5.reweight_pkl = "/groups/hephy/cms/robert.schoefbeck/gridpacks/Pa
 WZto2L_HT300_NoRef_v5_v2 = FWLiteSample.fromDAS("WZto2L_HT300_NoRef_v5_v2", "/SMEFTNet_v5_v2_WZto2LNoRef_HT300/schoef-SMEFTNet_v5_v2_WZto2LNoRef_HT300-bc19e596fe8b10b51c22bf6b67fbb6cc/USER", dbFile=dbFile, instance="phys03", prefix="root://eos.grid.vbc.ac.at/", overwrite=overwrite)
 WZto2L_HT300_NoRef_v5_v2.reweight_pkl = "/eos/vbc/group/cms/robert.schoefbeck/gridpacks/ParticleNet/WZto2LNoRef_HT300_reweight_card.pkl"
 
+# the following sample is mislabeled on DAS. It DOES have a ref point, cW=cWtil=1
+WZto2L_HT300_v7 = FWLiteSample.fromDAS("WZto2L_HT300_v7", "/SMEFTNet_v7_WZto2LNoRef_HT300/schoef-SMEFTNet_v7_WZto2LNoRef_HT300-60b660a08d8dc261d024afeeba37f8b9/USER", dbFile=dbFile, instance="phys03", prefix="root://eos.grid.vbc.ac.at/", overwrite=overwrite)
+WZto2L_HT300_v7.reweight_pkl = "/eos/vbc/group/cms/robert.schoefbeck/gridpacks/ParticleNet/WZto2L_HT300_v7_reweight_card.pkl"
+
+# the following sample is mislabeled on DAS. It DOES have a ref point, cW=cWtil=1
+WZto2L_HT300_v7_ext = FWLiteSample.fromDAS("WZto2L_HT300_v7_ext", "/SMEFTNet_v7_WZto2LNoRef_HT300_ext/schoef-SMEFTNet_v7_WZto2LNoRef_HT300_ext-60b660a08d8dc261d024afeeba37f8b9/USER", dbFile=dbFile, instance="phys03", prefix="root://eos.grid.vbc.ac.at/", overwrite=overwrite)
+WZto2L_HT300_v7_ext.reweight_pkl = "/eos/vbc/group/cms/robert.schoefbeck/gridpacks/ParticleNet/WZto2L_HT300_v7_reweight_card.pkl"
+
+# the following sample is mislabeled on DAS. It DOES have a ref point, cW=cWtil=1
+WZto2L_HT300_v7_ext2 = FWLiteSample.fromDAS("WZto2L_HT300_v7_ext2", "/SMEFTNet_v7_WZto2LNoRef_HT300_ext2/schoef-SMEFTNet_v7_WZto2LNoRef_HT300_ext2-60b660a08d8dc261d024afeeba37f8b9/USER", dbFile=dbFile, instance="phys03", prefix="root://eos.grid.vbc.ac.at/", overwrite=overwrite)
+WZto2L_HT300_v7_ext2.reweight_pkl = "/eos/vbc/group/cms/robert.schoefbeck/gridpacks/ParticleNet/WZto2L_HT300_v7_reweight_card.pkl"
+
+WZto2L_HT300_HI = FWLiteSample.fromDAS("WZto2L_HT300_HI", "/SMEFTNet_WZto2L_HT300_HI/schoef-SMEFTNet_WZto2L_HT300_HI-fd48a5bcaab23ba6452d6c4e6deac428/USER", dbFile=dbFile, instance="phys03", prefix="root://eos.grid.vbc.ac.at/", overwrite=overwrite)
+WZto2L_HT300_HI.reweight_pkl = "/eos/vbc/group/cms/robert.schoefbeck/gridpacks/ParticleNet/WZto2L_HT300_HI_reweight_card.pkl"
+
 #WhadZlepJJEWK = FWLiteSample.fromDAS("WhadZlepJJEWK", "/SMEFTNet_v3_WhadZlepJJ/schoef-SMEFTNet_v3_WhadZlepJJ-5ce880e6626b2530231b9a4b214156df/USER", dbFile=dbFile, instance="phys03", prefix="root://eos.grid.vbc.ac.at/", overwrite=overwrite)
 #WhadZlepJJEWK.reweight_pkl = "/eos/vbc/group/cms/robert.schoefbeck/gridpacks/ParticleNet/WhadZlepJJEWKNoRef_reweight_card.pkl"
 ##

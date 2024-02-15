@@ -770,6 +770,9 @@ def filler( event ):
         p4_top      = copy.deepcopy(top['p4'])
         p4_antitop  = copy.deepcopy(antitop['p4'])
 
+        # Eq 4.21 Bernreuther (k* and r*) LAB Frame!!
+        sign_star = float(np.sign(abs(p4_top.Rapidity()) - abs(p4_antitop.Rapidity())))
+
         p4_q_down = makeP4(hadTop_parton['q1'].p4()) #down-type quark is q1, defined above
         p4_q_up   = makeP4(hadTop_parton['q2'].p4())
         p4_q_b    = makeP4(hadTop_parton['b'].p4()) 
@@ -838,7 +841,6 @@ def filler( event ):
         #k_a.Print()
 
         # Eq 4.21 Bernreuther (k* and r*)
-        sign_star = float(np.sign(abs(p4_top.Rapidity()) - abs(p4_antitop.Rapidity())))
         k_a_star  = sign_star*k_hat
         r_a_star  = sign_star*sign_*r_hat
     
@@ -890,6 +892,9 @@ def filler( event ):
         p4_lepTop = copy.deepcopy(lepTop_parton['p4'])
         p4_lep    = makeP4(lepTop_parton['lep'].p4()) 
 
+        # Lab frame (Bernreuther Eq. 4.21)
+        sign_star = float(np.sign(abs(p4_lepTop.Rapidity()) - abs(p4_hadTop.Rapidity())))
+
         #print "lep-top"
         #print p4_lepTop.Print()
         #print "had-top"
@@ -921,7 +926,6 @@ def filler( event ):
         r_a = sign_charge*sign_*r_hat
         k_a = sign_charge*k_hat
 
-        sign_star = float(np.sign(abs(p4_lepTop.Rapidity()) - abs(p4_hadTop.Rapidity())))
         sign_star*=sign_charge #correct sign if the lepTop is the antiTop
 
         k_a_star = sign_star*k_hat
